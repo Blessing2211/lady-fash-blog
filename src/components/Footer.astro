@@ -1,0 +1,30 @@
+---
+import FacebookSVG from '../assets/fb.svg';
+import InstagramSVG from '../assets/ig.svg';
+import SnapSVG from '../assets/snap.svg';
+import EmailSVG from '../assets/at.svg';
+
+const copyrightYear = new Date().getFullYear();
+
+const iconStyling = "w-10 h-10";
+---
+
+<footer class="bg-gray-300 text-center py-4 w-full">
+		<div class="max-w-480 mx-auto px-[10%] flex  flex-col py-2">
+			<div class="flex w-full items-center justify-center space-x-6 mb-2 ">
+				<a href="/" class="text-black hover:text-pink-500">
+					<img src={FacebookSVG.src} alt="Facebook" class={iconStyling}/>
+				</a>
+				<a href="/aboutus" class="text-black hover:text-pink-500"></a>
+					<img src={InstagramSVG.src} alt="Instagram" class={iconStyling}/>
+				</a>
+				<a href="/aboutus" class="text-black hover:text-pink-500">
+					<img src={SnapSVG.src} alt="Snapchat" class={iconStyling}/>
+				</a>
+				<a href="mailto:email@example.com&subject=WebApp contact us&body=Hello, I would like to..." class="text-black hover:text-pink-500">
+					<img src={EmailSVG.src} alt="Email" class={iconStyling}/>
+				</a>
+			</div>
+			<p class="text-sm text-black">&copy; {copyrightYear} Lady's Fash Blog. All rights reserved.</p>
+		</div>
+	</footer>

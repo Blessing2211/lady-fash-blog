@@ -1,0 +1,24 @@
+---
+import BrowserLogo from '../assets/images/logo.ico';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+import "../styles/global.css";
+import "../styles/index.css";
+
+
+---
+
+<html>
+  <head>
+    <title>Lady's Fash Blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/x-icon" href={BrowserLogo} />
+  </head>
+  <body class=" bg-pink-50 font-inter">
+    <NavBar />
+        <slot /> 
+	<Footer />
+  </body>
+</html>

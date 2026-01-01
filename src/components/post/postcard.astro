@@ -1,0 +1,30 @@
+---
+import CommentSVG from '../../assets/comment.svg';
+const { post } = Astro.props;
+---
+<div class="bg-white rounded-lg shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div>
+        <img src={post.postImage} alt="Post Image" class="w-full h-48 object-cover"/>
+    </div>
+    <div class="px-4 py-2 flex flex-col justify-between">
+        <h3 class=" text-md lg:text-xl font-semibold mb-2 ">{post.title}</h3>
+        <p class="text-gray-600 mb-4 text-xs md:text-sm lg:text-md line-clamp-3 md:line-clamp-2 text-justify">{post.description}</p>
+        <div class="flex items-center justify-between">
+            <div>
+                <img src={post.authorImage} alt="" class="inline w-6 h-6 rounded-full mr-1"/>
+                <span class="text-xs">
+                    {post.authorName}
+                </span>
+                
+            </div>
+            <div>
+                <img src={CommentSVG.src} alt="Comments" class="inline w-4 h-4 mr-1"/>
+                <span class="text-xs md:text-sm lg:text-md">{post.commentCount}</span>
+            </div>
+            <div>
+                <span class="text-gray-500 text-xs md:text-sm lg:text-md">{post.date}</span>
+            </div>
+        </div>
+        <a href={`/post/${post.post_id}`} class="text-pink-600 text-xs md:text-sm lg:text-md hover:underline mt-2 md:mt-0">Read More &rarr;</a>
+    </div>
+</div>

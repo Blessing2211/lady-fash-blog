@@ -1,0 +1,63 @@
+---
+import Logo from '../assets/images/navlogo.png';
+---
+
+<header class="bg-gray-300 relative">
+  <nav class="flex items-center justify-between max-w-7xl mx-auto px-[5%] md:px-[10%] py-4">
+    <div class="z-50">
+      <img src={Logo.src} alt="Lady's Fash Blog Logo" class="w-8 h-8" />
+    </div>
+
+    <div class="md:hidden z-50">
+      <button id="menu-btn" class="block focus:outline-none">
+        <svg id="hamburger" class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="w-8 h-8 text-black hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="hidden md:flex justify-between items-center space-x-8">
+      <li><a href="/" class="text-lg font-semibold text-black hover:text-pink-500">Home</a></li>
+      <li><a href="/" class="text-lg font-semibold text-black hover:text-pink-500">Blog</a></li>
+      <li><a href="/aboutus" class="text-lg font-semibold text-black hover:text-pink-500">About Us</a></li>
+      <li><a href="/contact" class="text-lg font-semibold text-black hover:text-pink-500">Contact</a></li>
+    </ul>
+
+    <ul class="hidden md:flex justify-between items-center space-x-4">
+      <li><a href="/" class="text-lg font-semibold text-black hover:text-pink-500">Login</a></li>
+      <li><a href="/" class="text-lg font-semibold text-white bg-pink-600 py-2 px-6 rounded-full hover:bg-pink-700">Sign Up</a></li>
+    </ul>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-300 z-40 flex flex-col items-center justify-center space-y-8 md:hidden hidden">
+      <a href="/" class="text-2xl font-semibold text-black hover:text-pink-500">Home</a>
+      <a href="/" class="text-2xl font-semibold text-black hover:text-pink-500">Blog</a>
+      <a href="/aboutus" class="text-2xl font-semibold text-black hover:text-pink-500">About Us</a>
+      <a href="/contact" class="text-2xl font-semibold text-black hover:text-pink-500">Contact</a>
+      <hr class="w-1/2 border-gray-400" />
+      <a href="/" class="text-2xl font-semibold text-black">Login</a>
+      <a href="/" class="text-2xl font-semibold text-white bg-pink-600 py-3 px-10 rounded-full">Sign Up</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger');
+  const closeIcon = document.getElementById('close-icon');
+
+  // @ts-ignore
+  btn.addEventListener('click', () => {
+    // @ts-ignore
+    menu.classList.toggle('hidden');
+    // @ts-ignore
+    hamburger.classList.toggle('hidden');
+    // @ts-ignore
+    closeIcon.classList.toggle('hidden');
+    // Prevent scrolling when menu is open
+    document.body.classList.toggle('overflow-hidden');
+  });
+</script>
