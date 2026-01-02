@@ -1,0 +1,65 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import { blogPosts } from '../../data';
+import { sizingClass } from '../../constants/index.ts';
+
+export const prerender = false;
+
+const { id } = Astro.params;
+const post = blogPosts.find(p => p.post_id === id);
+
+if (!post) return Astro.redirect('/404');
+---
+
+<DefaultLayout>
+    <img src={post.postImage} alt={post.title} class="w-full h-[700px] object-fill mb-6 shadow-md" />
+    <main class={sizingClass}>
+        <article class="prose lg:prose-xl mx-auto my-8 w-full lg:w-[80%] ">
+            <h1 class="text-4xl font-bold mb-4">{post.title}</h1>
+            <div class="flex items-start space-x-2">
+                <img src={post.authorImage} alt={post.authorName} class="rounded-full h-16 w-16">
+                <div class="flex flex-col my-auto">
+                    <p class="text-lg font-medium ">{post.authorName}</p>
+                    <p class="text-gray-500 text-xs">{post.date}</p>
+            </div>
+            </div>
+            
+            <p class="text-justify leading-7">
+                {post.description}
+            </p>
+        </article>
+
+        <section class={sizingClass}>
+            <form action="">
+                <h2 class="text-lg font-bold mb-4 text-black">Leave a Comment</h2>
+                <textarea name="comment" rows="3" placeholder="Your comment..." class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 mb-4"></textarea>
+                <button type="submit" class="bg-pink-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-pink-600 transition duration-300">Submit Comment</button>
+            </form>
+
+            {post.comments && post.comments.length > 0 ? (
+                <div class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 text-black">Comments</h3>
+                    <ul class="space-y-6">
+                        {post.comments.map((comment) => (
+                            <li class="border-b border-gray-300 pb-4 shadow-sm shadow-neutral-500/50 p-4 rounded-2xl">
+                                <div class="flex">
+                                    <img src={comment.userImage} alt={comment.userName} class="rounded-full h-12 w-12 mr-4"/>
+                                    <div>
+                                        <p class="font-medium text-black">{comment.userName} 
+                                            <span class="text-gray-500 text-sm"> {comment.date}
+                                            </span>
+                                        </p>
+                                        <p class="mt-2 text-justify">{comment.text}</p>
+                                    </div>
+                                </div>
+                                
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ) : (
+                <p class="mt-8 text-gray-500">No comments yet. Be the first to comment!</p>
+            )}
+        </section>
+    </main>
+</DefaultLayout>

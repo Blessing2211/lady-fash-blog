@@ -2,10 +2,12 @@
 import Logo from '../assets/images/navlogo.png';
 ---
 
-<header class="bg-gray-300 relative">
+<header class="bg-neutral-200 relative">
   <nav class="flex items-center justify-between mx-auto px-[5%] md:px-[10%] py-4">
     <div class="z-50">
-      <img src={Logo.src} alt="Lady's Fash Blog Logo" class="w-8 h-8" />
+      <a href="/" class="text-2xl font-semibold text-black hover:text-pink-500">
+        <img src={Logo.src} alt="Lady's Fash Blog Logo" class="w-8 h-8" />
+      </a>
     </div>
 
     <div class="md:hidden z-50">
@@ -20,15 +22,15 @@ import Logo from '../assets/images/navlogo.png';
     </div>
 
     <ul class="hidden md:flex justify-between items-center space-x-8">
-      <li><a href="/" class="text-lg font-semibold text-black hover:text-pink-500">Home</a></li>
-      <li><a href="/blog" class="text-lg font-semibold text-black hover:text-pink-500">Blog</a></li>
-      <li><a href="/aboutus" class="text-lg font-semibold text-black hover:text-pink-500">About Us</a></li>
-      <li><a href="/contact" class="text-lg font-semibold text-black hover:text-pink-500">Contact</a></li>
+      <li><a href="/" class=" font-semibold text-black hover:text-pink-500">Home</a></li>
+      <li><a href="/blog" class=" font-semibold text-black hover:text-pink-500">Blog</a></li>
+      <li><a href="/aboutus" class=" font-semibold text-black hover:text-pink-500">About Us</a></li>
+      <li><a href="/contact" class=" font-semibold text-black hover:text-pink-500">Contact</a></li>
     </ul>
 
     <ul class="hidden md:flex justify-between items-center space-x-4">
-      <li><a href="/" class="text-lg font-semibold text-black hover:text-pink-500">Login</a></li>
-      <li><a href="/" class="text-lg font-semibold text-white bg-pink-600 py-2 px-6 rounded-full hover:bg-pink-700">Sign Up</a></li>
+      <li><a href="/login" class=" font-semibold text-black hover:text-pink-500">Login</a></li>
+      <li><a href="/signup" class=" font-semibold text-white bg-pink-600 py-2 px-4 rounded-full hover:bg-pink-700">Sign Up</a></li>
     </ul>
 
     <div id="mobile-menu" class="fixed inset-0 bg-gray-300 z-40 flex flex-col items-center justify-center space-y-8 md:hidden hidden">
@@ -37,8 +39,8 @@ import Logo from '../assets/images/navlogo.png';
       <a href="/aboutus" class="text-2xl font-semibold text-black hover:text-pink-500">About Us</a>
       <a href="/contact" class="text-2xl font-semibold text-black hover:text-pink-500">Contact</a>
       <hr class="w-1/2 border-gray-400" />
-      <a href="/" class="text-2xl font-semibold text-black">Login</a>
-      <a href="/" class="text-2xl font-semibold text-white bg-pink-600 py-3 px-10 rounded-full">Sign Up</a>
+      <a href="/login" class="text-2xl font-semibold text-black">Login</a>
+      <a href="/signup" class="text-2xl font-semibold text-white bg-pink-600 py-3 px-10 rounded-full">Sign Up</a>
     </div>
   </nav>
 </header>

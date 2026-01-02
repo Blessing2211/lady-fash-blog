@@ -6,25 +6,26 @@ import EmailSVG from '../assets/at.svg';
 
 const copyrightYear = new Date().getFullYear();
 
-const iconStyling = "w-10 h-10";
+const iconStyling = "w-8 h-8";
 ---
 
-<footer class="bg-gray-300 text-center py-4 w-full">
-		<div class="max-w-480 mx-auto px-[10%] flex  flex-col py-2">
+<footer class="bg-neutral-200 text-center py-4 w-full">
+		<div class="max-w-480 mx-auto px-[10%] flex  flex-col py-2 gap-6">
 			<div class="flex w-full items-center justify-center space-x-6 mb-2 ">
-				<a href="/" class="text-black hover:text-pink-500">
+				<a href="https://www.facebook.com/share/1AzekfXkNK/?mibextid=wwXIfr" class="text-black hover:text-pink-500">
 					<img src={FacebookSVG.src} alt="Facebook" class={iconStyling}/>
 				</a>
-				<a href="/aboutus" class="text-black hover:text-pink-500"></a>
+				<a href="https://www.instagram.com/blessingijeomalicha?igsh=cGFjbnF6eThkYWc%3D&utm_source=qr" class="text-black hover:text-pink-500"></a>
 					<img src={InstagramSVG.src} alt="Instagram" class={iconStyling}/>
 				</a>
-				<a href="/aboutus" class="text-black hover:text-pink-500">
+				<a href="https://snapchat.com/t/xnk3nYMn" class="text-black hover:text-pink-500">
 					<img src={SnapSVG.src} alt="Snapchat" class={iconStyling}/>
 				</a>
-				<a href="mailto:email@example.com&subject=WebApp contact us&body=Hello, I would like to..." class="text-black hover:text-pink-500">
+				<a href="mailto:ijeomabezeja@gmail.com?subject=WebApp contact us&body=Hello, I would like to..." class="text-black hover:text-pink-500">
 					<img src={EmailSVG.src} alt="Email" class={iconStyling}/>
 				</a>
 			</div>
-			<p class="text-sm text-black">&copy; {copyrightYear} Lady's Fash Blog. All rights reserved.</p>
+			<hr class="border border-gray-100 rounded-full w-full" />
+			<p class="text-sm text-black font-semibold">&copy; {copyrightYear} Lady's Fash Blog. All rights reserved.</p>
 		</div>
 	</footer>

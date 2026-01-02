@@ -6,55 +6,151 @@ export const blogPosts: BlogPost[] = [
     post_id: "838d7285-d601-4903-b82b-9e42e5b66d40",
     title: "Top 10 Fall Fashion Trends for 2026",
     postImage: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop",
-    description: "The evolution of fall fashion in 2026 represents a significant departure from the minimalist trends of previous years. As we transition into a new era of personal expression, the runways in Milan and Paris have showcased a bold return to maximalist textures and deep, resonant color palettes. This shift isn't just about aesthetics; it's about the emotional resonance of the clothes we choose to wear during the colder months. Imagine walking through the city streets draped in a structured leather trench coat that catches the low autumn sun—this is the energy of 2026. We are seeing a heavy influence from late 70s silhouettes, but updated with futuristic materials like liquid-chrome finishes and recycled synthetic furs that feel softer than the real thing. Layering has also taken on a new dimension. It's no longer just about putting a sweater over a shirt; it's about architectural layering using sheer fabrics, oversized knitwear, and modular accessories that can be detached or rearranged. Sustainability continues to be a core pillar, with many designers opting for deadstock fabrics that tell a story of their own. For the modern woman, this means your wardrobe becomes a gallery of history and innovation. Accessories are also leaning toward the dramatic. Think thigh-high boots in vibrant primary colors like cobalt blue and cherry red, paired with neutral earth tones to create a striking contrast. The traditional 'fall palette' of browns and oranges has been injected with neon accents, proving that winter doesn't have to be dull. As you prepare your closet for the upcoming season, consider the silhouette first. Are you going for the power-shoulder look that dominated the early 80s, or the fluid, gender-neutral draping that is currently sweeping the high-fashion world? Whatever your choice, the key is confidence and the willingness to experiment with textures that demand to be touched. From velvet blazers to silk-lined trousers, every piece should serve a purpose in your personal narrative. We believe that 2026 will be remembered as the year fashion finally broke free from the constraints of 'trends' and became a true form of self-directed art. So, as the leaves begin to turn and the air grows crisp, don't be afraid to stand out. Embrace the bold, the bright, and the beautiful. This is your season to shine, and these ten essential trends are just the starting point for your creative journey into the future of style. Stay tuned as we dive deeper into each piece in our upcoming series. Additionally, the move toward 'smart fabrics' that regulate temperature will be a game-changer for those living in unpredictable climates, ensuring you look cool while staying warm. It's a brave new world for the autumn wardrobe.",
+    description: "The evolution of fall fashion in 2026 represents a significant departure from the minimalist trends of previous years. As we transition into a new era of personal expression, the runways in Milan and Paris have showcased a bold return to maximalist textures and deep, resonant color palettes. This shift isn't just about aesthetics; it's about the emotional resonance of the clothes we choose to wear during the colder months. Imagine walking through the city streets draped in a structured leather trench coat that catches the low autumn sun—this is the energy of 2026. We are seeing a heavy influence from late 70s silhouettes, but updated with futuristic materials like liquid-chrome finishes and recycled synthetic furs that feel softer than the real thing. Layering has also taken on a new dimension. It's no longer just about putting a sweater over a shirt; it's about architectural layering using sheer fabrics, oversized knitwear, and modular accessories that can be detached or rearranged. Sustainability continues to be a core pillar, with many designers opting for deadstock fabrics that tell a story of their own. For the modern woman, this means your wardrobe becomes a gallery of history and innovation.",
     authorName: "Sophia Rivers",
     authorImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-    commentCount: 24,
+    commentCount: 2,
     date: "Oct 12, 2025",
-    link: "/post/838d7285-d601-4903-b82b-9e42e5b66d40"
+    link: "/post/838d7285-d601-4903-b82b-9e42e5b66d40",
+    comments: [
+      { userName: "Clara M.", userImage: "https://i.pravatar.cc/150?u=clara", text: "The neon accents in fall are such a game changer!", date: "Oct 13, 2025" },
+      { userName: "David Stylist", userImage: "https://i.pravatar.cc/150?u=david", text: "Liquid-chrome finishes are going to be everywhere.", date: "Oct 14, 2025" }
+    ]
   },
   {
     post_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479",
     title: "Mastering the Art of Sustainable Styling",
     postImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop",
-    description: "In an age of fast fashion and disposable trends, the concept of sustainable styling has shifted from a niche concern to a global necessity. Building a wardrobe that respects both the environment and the artisans who create our garments is the most revolutionary act a fashion lover can perform today. But sustainability doesn't mean sacrificing your aesthetic. In fact, it often leads to a more refined and personal style because it forces you to be intentional about every single purchase. A sustainable closet is built on the foundation of quality over quantity. Instead of buying ten cheap t-shirts that will lose their shape after three washes, the sustainable stylist invests in one high-quality organic cotton piece that will last for a decade. This approach requires a shift in mindset. We must move away from the dopamine hit of the 'new' and toward the deep satisfaction of the 'enduring.' One of the best ways to start this journey is through the 'Capsule Wardrobe' method. By curating a selection of 30 to 40 versatile pieces that all work together, you eliminate the daily stress of choosing an outfit while ensuring you always look polished. Vintage and second-hand shopping are also crucial tools in the sustainable toolkit. Thrifting allows you to find unique, one-of-a-kind pieces that haven't been seen on a thousand other people, giving your style a level of exclusivity that high-street brands simply cannot match. Furthermore, learning basic garment care and repair can drastically extend the life of your clothes. Knowing how to sew a button, de-pill a sweater, or properly store delicate silks can save you hundreds of dollars and prevent unnecessary waste. We also need to talk about the 'hidden' side of fashion—the chemicals used in dyes and the water consumed in production. By supporting brands that use natural dyes and closed-loop water systems, you are voting with your wallet for a cleaner planet. Sustainability is also about the people. Ethical fashion ensures that the workers in the supply chain are paid fair wages and work in safe conditions. As we look toward the future, the fashion industry must reckon with its environmental footprint, and as consumers, we hold the power to drive that change. It starts with small steps: researching a brand's values before buying, choosing natural fibers like linen and wool over microplastic-shedding synthetics, and most importantly, wearing what you already own. The most sustainable garment is the one already in your closet. By reimagining and restyling your existing pieces, you can find a whole new world of fashion without spending a dime. Let this guide be your roadmap to a more conscious and beautiful way of living. Together, we can make fashion a force for good. We must also consider the role of technology, like blockchain, in verifying the origin of our clothes. As the industry evolves, being a 'conscious consumer' will mean being an 'informed consumer.' Let us strive for a future where style and ethics are inseparable.",
+    description: "In an age of fast fashion and disposable trends, the concept of sustainable styling has shifted from a niche concern to a global necessity. Building a wardrobe that respects both the environment and the artisans who create our garments is the most revolutionary act a fashion lover can perform today. But sustainability doesn't mean sacrificing your aesthetic. In fact, it often leads to a more refined and personal style because it forces you to be intentional about every single purchase. A sustainable closet is built on the foundation of quality over quantity. Instead of buying ten cheap t-shirts that will lose their shape after three washes, the sustainable stylist invests in one high-quality organic cotton piece that will last for a decade. This approach requires a shift in mindset.",
     authorName: "Liam Chen",
     authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
-    commentCount: 8,
+    commentCount: 2,
     date: "Oct 15, 2025",
-    link: "/post/f47ac10b-58cc-4372-a567-0e02b2c3d479"
+    link: "/post/f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    comments: [
+      { userName: "Eco_Lover", userImage: "https://i.pravatar.cc/150?u=eco", text: "Quality over quantity, always.", date: "Oct 16, 2025" },
+      { userName: "Sarah P.", userImage: "https://i.pravatar.cc/150?u=sarah", text: "Thrifting changed my life and my style!", date: "Oct 17, 2025" }
+    ]
   },
   {
     post_id: "b9a4c56e-78d1-4235-987a-4c5678901234",
     title: "The Return of 90s Grunge: A Modern Twist",
     postImage: "https://images.unsplash.com/photo-1520006403909-838d6b92c22e?w=800&auto=format&fit=crop",
-    description: "The 1990s was a decade defined by rebellion, raw energy, and a total rejection of the polished glamour of the 80s. At the heart of this movement was grunge—a style born in the rainy streets of Seattle and propelled onto the global stage by bands like Nirvana and Pearl Jam. Fast forward to 2026, and grunge is back, but it has undergone a sophisticated transformation. The 'Modern Grunge' aesthetic takes the core elements of the original movement—flannel, distressed denim, and heavy boots—and mixes them with luxury fabrics and sharp tailoring. This creates a look that is both effortless and expensive, a juxtaposition that resonates deeply with today's youth culture. Imagine a silk slip dress, inspired by the icons of the mid-90s, layered under an oversized, heavy-weight cashmere flannel shirt. The contrast between the delicate silk and the rugged wool creates a tactile experience that is visually stunning. Footwear remains a cornerstone of the look, with chunky combat boots and platform loafers providing a grounded, utilitarian base for even the most feminine outfits. But modern grunge isn't just about looking messy; it's about a calculated disarray. Hair is styled to look 'undone' but is actually perfectly maintained, and makeup focuses on a moody, smudged eyeliner paired with clear, glowing skin. This evolution reflects our current cultural climate—a mix of nostalgia for a simpler time and a desire for high-quality, long-lasting products. Designers are playing with proportions, creating extra-long sleeves and cropped jackets that challenge traditional silhouettes. We are also seeing a resurgence of band tees, but instead of cheap screen prints, they are being reimagined as high-end graphic art pieces. The color palette of modern grunge has expanded beyond just grey and black. We're seeing deep plums, forest greens, and even muted mustards entering the mix, allowing for more creative expression within the genre. For those looking to incorporate this style into their daily routine, start with the basics. A high-quality pair of distressed black jeans is a must, as is a versatile oversized cardigan. The beauty of grunge is its inclusivity; it's a style that transcends age and gender, focusing instead on a shared attitude of authenticity. As we navigate the complexities of the mid-2020s, the return of grunge serves as a reminder that fashion is often a cyclical conversation between the past and the future. By embracing the 'modern twist' on this classic aesthetic, you can pay homage to the legends of the 90s while firmly planting your feet in the contemporary world. It's time to dig out those old records, lace up your boots, and rediscover the power of a perfectly unpolished look. After all, fashion should always feel a little bit like a revolution. It’s the rejection of the overly-curated digital self in favor of something that feels real, tactile, and wonderfully messy.",
+    description: "The 1990s was a decade defined by rebellion, raw energy, and a total rejection of the polished glamour of the 80s. At the heart of this movement was grunge—a style born in the rainy streets of Seattle and propelled onto the global stage by bands like Nirvana and Pearl Jam. Fast forward to 2026, and grunge is back, but it has undergone a sophisticated transformation. The 'Modern Grunge' aesthetic takes the core elements of the original movement—flannel, distressed denim, and heavy boots—and mixes them with luxury fabrics and sharp tailoring.",
     authorName: "Isabella Vane",
     authorImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
-    commentCount: 42,
+    commentCount: 3,
     date: "Oct 18, 2025",
-    link: "/post/b9a4c56e-78d1-4235-987a-4c5678901234"
+    link: "/post/b9a4c56e-78d1-4235-987a-4c5678901234",
+    comments: [
+      { userName: "Elena Rodriguez", userImage: "https://i.pravatar.cc/150?u=elena", text: "Silk slip dresses are the ultimate 90s staple.", date: "Oct 19, 2025" },
+      { userName: "Marcus J.", userImage: "https://i.pravatar.cc/150?u=marcus", text: "The tailoring tip is key for grunge.", date: "Oct 20, 2025" },
+      { userName: "Fashion_99", userImage: "https://i.pravatar.cc/150?u=fash99", text: "Calculated disarray is hard to master!", date: "Oct 21, 2025" }
+    ]
   },
   {
     post_id: "c7b8d9e0-1234-5678-90ab-cdef12345678",
     title: "Accessorizing for the Boardroom and Beyond",
     postImage: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&auto=format&fit=crop",
-    description: "In the professional world, the power of a well-chosen accessory cannot be overstated. While your choice of suit or dress sets the stage, your accessories provide the nuance and personality that define your professional brand. However, the modern working woman rarely finishes her day when the office clock strikes five. The transition from the boardroom to a cocktail bar or a gallery opening requires a strategic approach to accessorizing that is both efficient and impactful. This guide is designed to help you navigate those transitions with ease. The key to successful professional accessorizing is the concept of 'Foundational Elegance.' This means starting your day with classic, high-quality pieces that command respect without being distracting. A structured leather handbag in a neutral tone, a minimalist watch, and simple gold or silver studs are the perfect starting point. These pieces say you are organized, punctual, and attentive to detail. But as you move into the evening, you can introduce 'Statement Sophistication.' This might mean swapping your studs for a pair of architectural gold hoops or adding a bold, chunky necklace that draws the eye. The beauty of these swaps is that they take less than two minutes but completely transform the energy of your outfit. Another essential tool is the silk scarf. During the day, it can be tied neatly around the handle of your bag; in the evening, it can be worn as a necktie or even a hair accessory to add a pop of color and texture. We also need to consider the power of the belt. A slim, subtle belt during the day keeps your look tailored, but swapping it for a wider, more ornate version in the evening can instantly create a more festive silhouette. Footwear is perhaps the most challenging part of the transition. While a classic pump is perfect for meetings, a strappy heel or a polished boot might be more appropriate for an evening event. If you don't have time to change, consider a 'hybrid' shoe—a pointed-toe flat with interesting hardware or a low block heel that offers both comfort and style. Your choice of accessories also serves as a conversation starter. A unique vintage brooch or a handcrafted ring can be the perfect icebreaker at a networking event. Ultimately, accessorizing is about telling your story. It's about showing the world that you are a multifaceted individual who can command a room during the day and light it up at night. As we look at the trends for 2026, we see a move toward more personal and meaningful jewelry—pieces that have a history or support a cause. By choosing accessories that align with your values, you add a layer of depth to your professional persona. Beyond the physical, the confidence that comes from knowing you are perfectly put together is your best accessory. So, the next time you're getting ready for work, don't just think about your clothes. Think about the small details that will carry you through your day and into the night.",
+    description: "In the professional world, the power of a well-chosen accessory cannot be overstated. While your choice of suit or dress sets the stage, your accessories provide the nuance and personality that define your professional brand. However, the modern working woman rarely finishes her day when the office clock strikes five. The transition from the boardroom to a cocktail bar or a gallery opening requires a strategic approach to accessorizing that is both efficient and impactful.",
     authorName: "Marcus Thorne",
     authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
-    commentCount: 15,
+    commentCount: 2,
     date: "Oct 20, 2025",
-    link: "/post/c7b8d9e0-1234-5678-90ab-cdef12345678"
+    link: "/post/c7b8d9e0-1234-5678-90ab-cdef12345678",
+    comments: [
+      { userName: "Business_Gal", userImage: "https://i.pravatar.cc/150?u=biz", text: "Simple studs are my go-to for meetings.", date: "Oct 21, 2025" },
+      { userName: "Emma W.", userImage: "https://i.pravatar.cc/150?u=emma", text: "The silk scarf trick is a life saver!", date: "Oct 22, 2025" }
+    ]
   },
   {
     post_id: "a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6",
     title: "Minimalist Skincare for Maximum Glow",
     postImage: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&auto=format&fit=crop",
-    description: "In the fast-paced world of high fashion, where models and designers are constantly on the move, the '12-step skincare routine' has become a relic of the past. The new gold standard is minimalism—a focus on high-potency ingredients and streamlined processes that deliver maximum results with minimum effort. This shift isn't just about saving time; it's about skin health. Over-exfoliating and mixing too many active ingredients can damage the skin's natural barrier, leading to sensitivity and breakouts. The 'Minimalist Glow' routine focuses on three core pillars: Protection, Hydration, and Nutrition. The first and most important step in any routine, regardless of how many products you use, is sun protection. A high-quality, broad-spectrum SPF is non-negotiable. In 2026, we are seeing incredible innovations in sunscreen technology, with formulas that feel like weightless primers and leave no white cast, making them perfect for all skin tones. The second pillar is hydration. Instead of multiple serums, look for a single multi-molecular hyaluronic acid that can penetrate different layers of the skin. This provides a 'plumping' effect that fills in fine lines and creates a smooth canvas for makeup. The third pillar is nutrition. This means using a vitamin-rich moisturizer or face oil that feeds the skin the antioxidants it needs to fight environmental stressors like pollution and blue light. For the fashion-conscious woman, skincare is the ultimate foundation. When your skin is healthy and glowing, you need less makeup, allowing your natural beauty—and your outfit—to take center stage. We also need to talk about the importance of consistency. A simple routine followed every single day will always outperform a complex routine that you only do once a week. Another key aspect of the minimalist approach is 'Skin-Fastening'—the practice of taking a break from all active ingredients once a month to allow the skin to reset. During this time, you use only a gentle cleanser and a basic moisturizer. This prevents the skin from becoming 'lazy' and ensures that your products continue to be effective. Diet and lifestyle also play a huge role in the minimalist glow. Drinking plenty of water, getting enough sleep, and managing stress are just as important as the products you put on your face. As we navigate the busy fashion weeks and social seasons, remember that your skin is a reflection of your overall well-being. By simplifying your routine, you reduce the 'noise' and allow your skin's natural radiance to shine through. This minimalist philosophy extends to our choice of brands. We are seeing a surge in 'transparency-first' companies that list their ingredients clearly and avoid unnecessary fillers and fragrances. This empowers you to make informed choices about what you're putting on your body. In conclusion, achieving a runway-ready glow doesn't require a bathroom cabinet full of products. It requires a strategic, thoughtful approach that prioritizes quality over quantity. Embrace the power of less, and watch as your skin transforms. In the end, beauty is about health and simplicity, not clutter and confusion.",
+    description: "In the fast-paced world of high fashion, where models and designers are constantly on the move, the '12-step skincare routine' has become a relic of the past. The new gold standard is minimalism—a focus on high-potency ingredients and streamlined processes that deliver maximum results with minimum effort. This shift isn't just about saving time; it's about skin health. Over-exfoliating and mixing too many active ingredients can damage the skin's natural barrier.",
     authorName: "Sophia Rivers",
     authorImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-    commentCount: 31,
+    commentCount: 2,
     date: "Oct 22, 2025",
-    link: "/post/a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6"
+    link: "/post/a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6",
+    comments: [
+      { userName: "GlowGetter", userImage: "https://i.pravatar.cc/150?u=glow", text: "SPF is truly non-negotiable.", date: "Oct 23, 2025" },
+      { userName: "Mia Beauty", userImage: "https://i.pravatar.cc/150?u=mia", text: "Skin-fastening is my new favorite tip!", date: "Oct 24, 2025" }
+    ]
+  },
+  {
+    post_id: "e9d8c7b6-a5b4-43c2-d1e0-f9g8h7i6j5k4",
+    title: "Eco-Friendly Footwear: Stepping into the Future",
+    postImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop",
+    description: "The global footwear industry has long been criticized for its heavy environmental toll. However, as we move through 2026, a wave of innovation is transforming how we walk. Eco-friendly footwear is no longer limited to basic canvas sneakers; it now encompasses everything from high-performance running shoes to luxury evening heels.",
+    authorName: "Oliver Green",
+    authorImage: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop",
+    commentCount: 2,
+    date: "Oct 25, 2025",
+    link: "/post/e9d8c7b6-a5b4-43c2-d1e0-f9g8h7i6j5k4",
+    comments: [
+      { userName: "ShoeFanatic", userImage: "https://i.pravatar.cc/150?u=shoe", text: "Mushroom leather is surprisingly durable!", date: "Oct 26, 2025" },
+      { userName: "Eco_Step", userImage: "https://i.pravatar.cc/150?u=step", text: "Modular construction is the future.", date: "Oct 27, 2025" }
+    ]
+  },
+  {
+    post_id: "f8e7d6c5-b4a3-4210-9876-543210abcdef",
+    title: "The Rise of Digital Fashion: Dressing for the Metaverse",
+    postImage: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&auto=format&fit=crop",
+    description: "As our lives become increasingly digital, the way we express ourselves through fashion is also moving beyond the physical realm. Digital fashion, once a niche interest for gamers, is now a multi-billion dollar industry that is redefining the concept of a 'wardrobe.'",
+    authorName: "Luna Byte",
+    authorImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop",
+    commentCount: 2,
+    date: "Oct 28, 2025",
+    link: "/post/f8e7d6c5-b4a3-4210-9876-543210abcdef",
+    comments: [
+      { userName: "Meta_Mitch", userImage: "https://i.pravatar.cc/150?u=meta", text: "I love my digital sneakers!", date: "Oct 29, 2025" },
+      { userName: "PixelPixie", userImage: "https://i.pravatar.cc/150?u=pixel", text: "Digital couture is so much fun to 'wear'.", date: "Oct 30, 2025" }
+    ]
+  },
+  {
+    post_id: "01234567-89ab-cdef-0123-456789abcdef",
+    title: "Gender-Neutral Fashion: Breaking the Binary",
+    postImage: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&auto=format&fit=crop",
+    description: "The traditional boundaries between 'men's' and 'women's' fashion are rapidly dissolving, replaced by a more inclusive and fluid approach to dressing. Gender-neutral fashion, once a radical statement, is now a mainstream movement that is reshaping the entire industry.",
+    authorName: "Alex Grey",
+    authorImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+    commentCount: 2,
+    date: "Oct 30, 2025",
+    link: "/post/01234567-89ab-cdef-0123-456789abcdef",
+    comments: [
+      { userName: "Boundary_Free", userImage: "https://i.pravatar.cc/150?u=bf", text: "Clothes have no gender!", date: "Oct 31, 2025" },
+      { userName: "Sam_Style", userImage: "https://i.pravatar.cc/150?u=sam", text: "Gender-neutral tailoring is so chic.", date: "Nov 01, 2025" }
+    ]
+  },
+  {
+    post_id: "fedcba98-7654-3210-fedc-ba9876543210",
+    title: "The Power of Slow Fashion: Quality over Speed",
+    postImage: "https://images.unsplash.com/photo-1520006403909-838d6b92c22e?w=800&auto=format&fit=crop",
+    description: "In a world that is increasingly obsessed with speed and convenience, the slow fashion movement is a much-needed breath of fresh air. It’s a rejection of the fast fashion model, which prioritizes low prices at the expense of quality and sustainability.",
+    authorName: "Evelyn Thorne",
+    authorImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop",
+    commentCount: 2,
+    date: "Nov 02, 2025",
+    link: "/post/fedcba98-7654-3210-fedc-ba9876543210",
+    comments: [
+      { userName: "Slow_Stitch", userImage: "https://i.pravatar.cc/150?u=slow", text: "Every piece I own has a story.", date: "Nov 03, 2025" },
+      { userName: "Eco_Edit", userImage: "https://i.pravatar.cc/150?u=edit", text: "Quality is truly the best sustainability.", date: "Nov 04, 2025" }
+    ]
+  },
+  {
+    post_id: "12345678-1234-1234-1234-123456781234",
+    title: "Wearable Tech: Fashion Meets Functionality",
+    postImage: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=800&auto=format&fit=crop",
+    description: "The line between fashion and technology is increasingly blurring, with wearable tech becoming a core part of our everyday wardrobes. In 2026, we're seeing a shift away from clunky gadgets toward more integrated garments.",
+    authorName: "Leo Tech",
+    authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    commentCount: 2,
+    date: "Nov 05, 2025",
+    link: "/post/12345678-1234-1234-1234-123456781234",
+    comments: [
+      { userName: "Gadget_Guy", userImage: "https://i.pravatar.cc/150?u=gadget", text: "I need that heating jacket!", date: "Nov 06, 2025" },
+      { userName: "Tech_Trend", userImage: "https://i.pravatar.cc/150?u=trend", text: "Functional and beautiful.", date: "Nov 07, 2025" }
+    ]
   }
 ];

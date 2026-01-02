@@ -1,9 +1,33 @@
 ---
-import "../styles/global.css";
+import DefaultLayout from "../layouts/DefaultLayout.astro"
+import AboutUsBanner from '../assets/images/about-banner.jpg'
+import { sizingClass } from "../constants";
+import { Icon } from 'astro-icon/components';
+import photo from '../assets/images/blessingezeja.jpg';
 ---
 
-<div>
-    <h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
-</div>
+<DefaultLayout>
+    <main>
+      <div class="relative">
+          <img src={AboutUsBanner.src} alt="About Us Banner" class="w-full h-48 object-cover mb-6 shadow-md" />
+          <div class="absolute top-[5%] left-0 w-full h-full flex items-center justify-center">
+              <div class="flex flex-col items-center text-center p-4 rounded-md">
+                  <h2 class="text-black text-4xl font-bold">About Us</h2>
+              </div>
+          </div>
+      </div>
+      <div class={sizingClass}>
+          <div class="w-full grid lg:grid-cols-5 gap-6 lg:w-[80%] mx-auto">
+            <div class="lg:col-span-3 w-full text-black text-lg flex flex-col gap-4 text-justify">
+              Blessing Ezeja is the visionary founder and CEO of Lady's Fash Blog, a premier online destination for fashion enthusiasts. With a passion for style and a keen eye for trends, Blessing established the blog to inspire and empower women to express themselves through fashion. Under her leadership, Lady's Fash Blog has grown into a vibrant community where readers can discover the latest fashion tips, trends, and insights. Blessing's dedication to curating high-quality content and fostering a supportive environment has made her a respected figure in the fashion blogging world. Through Lady's Fash Blog, she continues to champion individuality and confidence, encouraging women everywhere to embrace their unique style.
+              Lady's Fash Blog covers a wide range of topics, including seasonal fashion trends, styling advice, beauty tips, and lifestyle content. Blessing's commitment to authenticity and inclusivity shines through in every post, making the blog a go -to resource for fashion lovers of all backgrounds. With her innovative approach and unwavering dedication, Blessing Ezeja is not only shaping the future of fashion blogging but also inspiring a new generation of style enthusiasts.
+            </div>
+          <div class="lg:col-span-2 w-full flex flex-col items-center justify-center mt-2">
+            <img src={photo.src} alt="Founder Blessing Ezeja" class="h-78 object-contain" />
+            <h2 class="text-lg">Blessing Ijeoma Ezeja</h2>
+            <p class="text-mute text-sm">Founder & CEO & Editor </p>
+            <Icon name="lucide:facebook" />
+          </div>
+      </div>
+    </main>
+</DefaultLayout>

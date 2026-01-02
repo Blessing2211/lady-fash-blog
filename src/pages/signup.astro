@@ -1,0 +1,132 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import { Icon } from "astro-icon/components";
+import Logo from '../assets/images/logo.png';
+---
+
+<DefaultLayout>
+  <main
+    class="min-h-screen flex flex-col items-center justify-center bg-gray-100"
+  >
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div class="flex flex-col items-center">
+            <img src={Logo.src} alt="Logo" class="h-32 w-auto mb-4"/>
+        </div>
+      <h2 class="text-2xl font-bold mb-6 text-black text-center">Sign Up</h2>
+      <form
+        action="https://formspree.io/f/your-form-id"
+        method="POST"
+        class="flex flex-col gap-4"
+      >
+        <label class="text-black font-semibold">
+          Firstname:
+          <input
+            type="text"
+            name="firstname"
+            required
+            class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </label>
+        <label class="text-black font-semibold">
+          Lastname:
+          <input
+            type="text"
+            name="lastname"
+            required
+            class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </label>
+        <label class="text-black font-semibold">
+          Email:
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </label>
+        <label class="text-black font-semibold">
+          Username:
+          <input
+            type="text"
+            name="username"
+            required
+            class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </label>
+        <label class="text-black font-semibold">
+          Password:
+          <input
+            type="password"
+            name="password"
+            required
+            class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </label>
+        <label class="text-black font-semibold">
+          Confirm Password:
+          <input
+            type="password"
+            name="confirm_password"
+            required
+            class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          />
+        </label>
+        <div class="space-y-2">
+          <span class="text-black font-semibold block">Profile Picture</span>
+
+          <label
+            class="group relative flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer bg-gray-50 hover:bg-pink-50 hover:border-pink-400 transition-all duration-300"
+          >
+            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+              <Icon
+                name="lucide:upload"
+                class="w-8 h-8 text-gray-400 group-hover:text-pink-500 mb-2 transition-colors"
+              />
+              <p class="text-sm text-gray-500 group-hover:text-pink-600">
+                <span class="font-semibold">Click to upload</span> or drag and drop
+              </p>
+              <p
+                id="file-name"
+                class="text-xs text-pink-500 mt-1 font-medium italic"
+              >
+              </p>
+            </div>
+
+            <input
+              type="file"
+              name="profile_picture"
+              id="profile_upload"
+              accept="image/*"
+              required
+              class="hidden"
+            />
+          </label>
+        </div>
+        <button
+          type="submit"
+          class="bg-pink-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-pink-600 transition duration-300"
+          >Create Account</button
+        >
+        <p class="w-full text-center">Already have an account? <a href="/login" class="text-pink-500 hover:underline">Login</a></p>
+      </form>
+    </div>
+  </main>
+</DefaultLayout>
+
+<script>
+  // Small script to show the filename once a user selects a picture
+  const fileInput = document.getElementById(
+    "profile_upload"
+  ) as HTMLInputElement;
+  const fileNameDisplay = document.getElementById("file-name");
+
+  fileInput?.addEventListener("change", (e) => {
+    const target = e.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      if (fileNameDisplay) {
+        fileNameDisplay.textContent = `Selected: ${target.files[0].name}`;
+      }
+    }
+  });
+</script>
