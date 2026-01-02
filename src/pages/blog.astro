@@ -1,0 +1,28 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import { sizingClass } from '../constants/index.ts';
+import BlogBanner from '../assets/images/blogbanner.jpg'
+import { blogPosts } from '../data';
+import Postcard from '../components/post/postcard.astro';
+---
+
+<DefaultLayout>
+    <main>
+        <div class="relative">
+            <img src={BlogBanner.src} alt="Blog Banner" class="w-full h-48 object-cover mb-6 rounded-lg shadow-md" />
+            <div class={`${sizingClass} absolute top-[5%] left-0 w-full h-full flex items-center justify-center`}>
+                <div class="flex flex-col items-center text-center  p-4 rounded-md">
+                    <h2 class="text-black text-4xl font-bold">Blog</h2>
+                </div>
+            </div>
+        </div>
+        <div class={sizingClass}>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {blogPosts.map((post) => ( 
+                    <Postcard post={post} />
+                ))}  
+                </div>
+        </div>
+        
+    </main>
+</DefaultLayout>

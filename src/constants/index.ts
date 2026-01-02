@@ -1,0 +1,1 @@
+export const sizingClass = 'max-w-480 mx-auto px-[10%] mb-12';

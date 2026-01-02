@@ -1,8 +1,9 @@
 --- 
 import PostCard from '../post/postcard.astro';
 import { blogPosts } from '../../data';
+import { sizingClass } from '../../constants';
 ---
-<section class="max-w-480 mx-auto px-[10%] mb-12">
+<section class={sizingClass}>
 		<h2 class=" text-xl lg:text-3xl font-bold mb-6">Latest Posts</h2>
 		<div class="flex flex-col space-y-4">
         {blogPosts.map((post) => ( 
