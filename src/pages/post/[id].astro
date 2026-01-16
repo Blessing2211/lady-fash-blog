@@ -1,55 +1,109 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
-import { blogPosts } from '../../data';
 import { sizingClass } from '../../constants/index.ts';
-
+import type { Comment } from '../../types'
 export const prerender = false;
 
 const { id } = Astro.params;
-const post = blogPosts.find(p => p.post_id === id);
+const { user } = Astro.locals;
+const _post = await fetch(`${Astro.url.origin}/api/post/${id}`);
+// @ts-ignore
+const { post } = await _post.json();
 
 if (!post) return Astro.redirect('/404');
+
+
+let error = '';
+let success = Astro.url.searchParams.get('success') || '';
+
+
+if(Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    formData.append('post_id', id!);
+    formData.append('user_id', user.user_id);
+
+    const apiResponse = await fetch(`${Astro.url.origin}/api/comment`, {
+      method: "POST",
+      body: formData,
+    });
+    const apiResult = await apiResponse.json();
+    if (apiResponse.status.toString().startsWith("4")) {
+      error = apiResult.error || "Comment failed. Please try again.";
+    }
+
+    if(apiResponse.status.toString().startsWith("2")){
+        success = apiResult.message || "Your comment is posted successfully.";
+        return Astro.redirect(`/post/${id}?success=${encodeURIComponent(success)}`);
+    }
+    
+  } catch (e) {
+    error = "Unexpected Error occured!";
+
+  }
+}
 ---
 
 <DefaultLayout>
-    <img src={post.postImage} alt={post.title} class="w-full h-[700px] object-fill mb-6 shadow-md" />
+    <img src={post.image.publicUrl} alt={post.title} class="w-full h-[700px] object-fill mb-6 shadow-md" />
     <main class={sizingClass}>
+        {error && (
+            <div id="error-message" class="bg-red-500 text-white p-4">
+                {error}
+            </div>
+            )}
+
+            {success && (
+            <div id="success-message" class="bg-green-500 text-white p-4">
+                {success}
+            </div>
+        )}
         <article class="prose lg:prose-xl mx-auto my-8 w-full lg:w-[80%] ">
             <h1 class="text-4xl font-bold mb-4">{post.title}</h1>
             <div class="flex items-start space-x-2">
-                <img src={post.authorImage} alt={post.authorName} class="rounded-full h-16 w-16">
+                <img src={post.users.image.publicUrl} alt={post.users.firstname + " " + post.users.lastname} class="rounded-full h-16 w-16">
                 <div class="flex flex-col my-auto">
-                    <p class="text-lg font-medium ">{post.authorName}</p>
-                    <p class="text-gray-500 text-xs">{post.date}</p>
+                    <p class="text-lg font-medium ">{post.users.firstname + " " + post.users.lastname}</p>
+                    <p class="text-gray-500 text-xs">{new Date(post.created_at).toDateString()}</p>
             </div>
             </div>
             
             <p class="text-justify leading-7">
-                {post.description}
+                {post.content}
             </p>
         </article>
 
         <section class={sizingClass}>
-            <form action="">
+            {user && Object.keys(user).length > 0 && (
+                <form 
+                method="POST"
+            >
                 <h2 class="text-lg font-bold mb-4 text-black">Leave a Comment</h2>
                 <textarea name="comment" rows="3" placeholder="Your comment..." class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 mb-4"></textarea>
                 <button type="submit" class="bg-pink-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-pink-600 transition duration-300">Submit Comment</button>
             </form>
+            )}
 
-            {post.comments && post.comments.length > 0 ? (
+            {post.comment && post.comment.length > 0 ? (
                 <div class="mt-8">
                     <h3 class="text-xl font-bold mb-4 text-black">Comments</h3>
                     <ul class="space-y-6">
-                        {post.comments.map((comment) => (
+                        {post.comment.map((comment: Comment) => (
                             <li class="border-b border-gray-300 pb-4 shadow-sm shadow-neutral-500/50 p-4 rounded-2xl">
                                 <div class="flex">
-                                    <img src={comment.userImage} alt={comment.userName} class="rounded-full h-12 w-12 mr-4"/>
+                                    <img src={// @ts-ignore
+                                        comment.users.image.publicUrl
+                                        } alt={// @ts-ignore
+                                            comment.users.firstname} class="rounded-full h-12 w-12 mr-4"/>
                                     <div>
-                                        <p class="font-medium text-black">{comment.userName} 
-                                            <span class="text-gray-500 text-sm"> {comment.date}
+                                        <p class="font-medium text-black">{// @ts-ignore
+                                            comment.userName} 
+                                            <span class="text-gray-500 text-sm"> { // @ts-ignore
+                                            new Date(comment.created_at).toDateString()}
                                             </span>
                                         </p>
-                                        <p class="mt-2 text-justify">{comment.text}</p>
+                                        <p class="mt-2 text-justify">{ // @ts-ignore
+                                        comment.comment}</p>
                                     </div>
                                 </div>
                                 
@@ -63,3 +117,19 @@ if (!post) return Astro.redirect('/404');
         </section>
     </main>
 </DefaultLayout>
+<script>
+  const errorBox = document.getElementById('error-message');
+  const successBox = document.getElementById('success-message');
+
+  if (errorBox) {
+    setTimeout(() => {
+      errorBox.style.display = 'none';
+    }, 4000);
+  }
+
+  if (successBox) {
+    setTimeout(() => {
+      successBox.style.display = 'none';
+    }, 4000);
+  }
+</script>

@@ -1,0 +1,79 @@
+---
+import DashboardSidebar from "../../layouts/DashboardSidebar.astro";
+import CommentSVG from '../../assets/comment.svg';
+import { Icon } from "astro-icon/components";
+import type { BlogPost } from "../../types";
+
+const _posts = await fetch(`${Astro.url.origin}/api/posts`);
+const {posts: blogPosts} = await _posts.json();
+const { user } = Astro.locals;
+
+
+---
+<DashboardSidebar>
+    <main class="max-w-480 mx-auto p-4">
+        <div class="flex justify-between items-center mb-6">
+            <p class="text-md lg:text-2xl font-bold my-2">My Posts</p>
+            <a href="/dashboard/newpost" class="text-white bg-pink-600 py-2 px-4 rounded-full hover:bg-pink-700">+ New Post</a>
+        </div>
+        <table class="w-full my-4 border-collapse border border-pink-300">
+            <thead>
+                <tr class="bg-pink-200 text-gray-600">
+                    <th class="p-4 text-left">Title</th>
+                    <th class="p-4 text-left">Date </th>
+                    <th class="p-4 text-left">Comments</th>
+                    <th class="p-4 text-left">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {blogPosts.map((post: BlogPost) => (
+                    <tr class="border-b">
+                        <td class="p-4"><a href={`/post/${post.post_id}`} class="text-blue-500 hover:underline">{post.title}</a></td>
+                        <td class="p-4">{new Date(post.created_at).toDateString()}</td>
+                        <td class="p-4"><img src={CommentSVG.src} alt="Comments" class="inline w-4 h-4 mr-1"/> <span class="text-sm">{post.comment.length || 0}</span></td>
+                        <td class="p-4 flex space-x-2">
+                            <a href={`/dashboard/post/edit/${post.post_id}`} class="text-blue-500 hover:underline"><Icon name="lucide:edit" /></a>
+                            |
+                            <a 
+                            data-postid={post.post_id}
+                            data-userid={user.user_id}
+                            href={`/api/post/${post.post_id}`} class="delete-btn ml-2 text-red-500 hover:underline"><Icon name="lucide:trash-2" /></a>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+        
+    </main>
+</DashboardSidebar>
+
+<script>
+  const deleteButtons = document.querySelectorAll('.delete-btn');
+
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', async (e) => {
+      const post_id = button.getAttribute('data-postid');
+      const user_id = button.getAttribute('data-userid');
+      
+      if (!confirm("Are you sure you want to delete this post?")) return;
+
+      try {
+        const formData = new FormData();
+        formData.append('user_id', user_id!)
+        const response = await fetch(`/api/post/${post_id}`, {
+          method: 'DELETE', 
+          body: formData
+        });
+
+        if (response.ok) {
+          window.location.reload();
+        } else {
+          const error = await response.json();
+          alert(`Error: ${error.message}`);
+        }
+      } catch (err) {
+        alert('Error: Internal Error');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,155 @@
+---
+export const prerender = false;
+import { Icon } from "astro-icon/components";
+import DashboardSidebar from "../../layouts/DashboardSidebar.astro";
+
+
+// @ts-ignore
+const user = Astro.locals.user
+
+const message = Astro.url.searchParams.get('message');
+const _success = Astro.url.searchParams.get('success');
+let error = message || "";
+let success = _success || "";
+
+
+if(Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    formData.append('user', JSON.stringify(user));
+
+    const apiResponse = await fetch(`${Astro.url.origin}/api/signup`, {
+      method: "PUT",
+      body: formData,
+    });
+    const apiResult = await apiResponse.json();
+    if (apiResponse.status.toString().startsWith("4")) {
+      error = apiResult.error || "User profile update failed. Please try again.";
+      return Astro.redirect(`/dashboard/settings?message=${encodeURIComponent(error)}`);
+    }
+    const _success = apiResult.message || 'Profile updated successfully';
+    return Astro.redirect(`/dashboard/settings?success=${encodeURIComponent(_success)}`);
+  } catch (err) {
+    error = "An unexpected error occurred. Please try again.";
+    return Astro.redirect(`/dashboard/settings?message=${encodeURIComponent(error)}`);
+  }
+}
+
+---
+<DashboardSidebar>
+    <form 
+        method="POST" 
+        enctype="multipart/form-data"  class="flex flex-col items-start p-4 justify-start">
+      <h1 class="text-md lg:text-2xl font-bold">Settings</h1>
+      {error && (
+        <div
+          class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4"
+          role="alert"
+        >
+          <strong class="font-bold">Error:</strong>
+          <span class="block sm:inline">{error}</span>
+        </div>  
+      )}
+      {success && (
+        <div
+          class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"
+          role="alert"
+        >
+          <strong class="font-bold">Success:</strong>
+          <span class="block sm:inline">{success}</span>
+        </div>  
+      )}
+      <div
+        class="p-4 bg-gray-100 rounded-xl "
+      >
+        <h1 class="text-md lg:text-xl font-bold leading-3">Profile Information</h1>
+        <p class="my-3">Update your profile details and public information.</p>
+        <div class="mt-4">
+         <div class="form-control w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="w-full">
+              <label class="my-2 ">
+                <span class="label-text text-black font-semibold">Firstname</span>
+              </label>
+              <input type="text" placeholder="Your Firstname" name="firstname" class="input input-bordered w-full bg-white my-2 p-2 rounded-lg text-sm" value={user.firstname}/>
+            </div>
+            <div class="w-full">
+              <label class="my-2 ">
+                <span class="label-text text-black font-semibold">Lastname</span>
+              </label>
+              <input type="text" placeholder="Your Lastname" name="lastname" class="input input-bordered w-full bg-white my-2 p-2 rounded-lg text-sm" value={user.lastname}/>
+            </div>
+         </div>
+
+         <div class="form-control w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+            <div class="w-full">
+              <label class="my-2 ">
+                <span class="label-text text-black font-semibold">Username</span>
+              </label>
+              <input type="text" value={user.username} placeholder="Your Username" disabled={true} class="input input-bordered w-full bg-gray-300 my-2 p-2 rounded-lg text-sm cursor-not-allowed"/>
+            </div>
+            <div class="w-full">
+              <label class="my-2 ">
+                <span class="label-text text-black font-semibold">Email</span>
+              </label>
+              <input type="text" value={user.email} placeholder="Your email" disabled={true} class="input input-bordered w-full bg-gray-300 my-2 p-2 rounded-lg text-sm cursor-not-allowed"/>
+            </div>
+         </div>
+          <div class="form-control w-full my-4">
+            <label
+            class="group relative flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer bg-gray-50 hover:bg-pink-50 hover:border-pink-400 transition-all duration-300"
+            >
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <Icon
+                  name="lucide:upload"
+                  class="w-8 h-8 text-gray-400 group-hover:text-pink-500 mb-2 transition-colors"
+                />
+                <p class="text-sm text-gray-500 group-hover:text-pink-600">
+                  <span class="font-semibold">Click to upload</span> Max file size 1MB
+                </p>
+                <p
+                  id="file-name"
+                  class="text-xs text-pink-500 mt-1 font-medium italic"
+                >
+                </p>
+              </div>
+
+              <input
+                type="file"
+                name="profile_picture"
+                id="profile_upload"
+                accept="image/*"
+                class="hidden"
+              />
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 mt-2 cursor-pointer">
+          Update Profile
+        </button>
+      </div>
+
+      <div class="mt-8">
+        <div class="p-4 bg-gray-100"  >
+        <h1 class="text-md lg:text-xl font-bold leading-3">Change Password</h1>
+        <p class="my-3">Change your account password regularly to stay secure.</p>
+        
+        <div class="form-control w-full my-4">
+          <label class="my-2 ">
+            <span class="label-text text-black font-semibold">New Password</span>
+          </label> 
+          <input type="password" placeholder="New Password" name="new_password" class="input input-bordered w-full bg-white my-2 p-2 rounded-lg text-sm"/>
+        </div>
+        <div class="form-control w-full my-4">
+          <label class="my-2 ">
+            <span class="label-text text-black font-semibold">Confirm New Password</span>
+          </label>
+          <input type="password" placeholder="Confirm New Password" name="confirm_new_password" class="input input-bordered w-full bg-white my-2 p-2 rounded-lg text-sm"/>
+        </div>
+        <button type="submit" class="bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 mt-2 cursor-pointer">
+          Update Password
+        </button>
+      </div>
+      </div>
+
+    </form>
+</DashboardSidebar>

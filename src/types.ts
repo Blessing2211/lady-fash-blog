@@ -1,19 +1,18 @@
+import type { User } from "@supabase/supabase-js";
+
 export interface Comment {
-  userName: string;
-  userImage: string; // Added this for your wireframe
-  text: string;
-  date: string;
+  comment: string;
+  created_at: string; 
+  users: User;
 }
 
 export interface BlogPost {
   post_id: string; 
   title: string;
-  description: string;
-  postImage: string;
-  authorName: string;
-  authorImage: string;
-  commentCount: number;
-  date: string;
-  link: string;
-  comments: Comment[];
+  content: string;
+  image: string;
+  users: User[];
+  comment: Comment[];
+  created_at: string;
+  
 }

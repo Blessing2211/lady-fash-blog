@@ -1,0 +1,79 @@
+---
+import BrowserLogo from '../assets/images/logo.ico';
+import Logo from '../assets/images/logo.png';
+import { Icon } from 'astro-icon/components';
+import '../styles/global.css';
+import "../styles/index.css";
+
+// @ts-ignore
+const user = Astro.locals.user;
+
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Lady's Fash Blog</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="icon" type="image/x-icon" href={BrowserLogo} />
+  </head>
+ <body class="bg-white text-black min-h-screen font-inter">
+  <div class="flex min-h-screen"> 
+    
+    <aside class="flex flex-col w-42 md:w-64 h-screen bg-white border-r border-gray-200 p-6 sticky top-0" id="sidebar-content">
+      <div class="pb-8 mb-6 border-b border-gray-100">
+        <a class="flex items-center gap-2 w-full cursor-pointer" href="/">
+          <div class="w-8 h-8  rounded-lg flex items-center justify-center mx-auto md:mx-0">
+            <img src={Logo.src} alt="Lady's Fash Blog Logo" class="w-8 h-8" />
+          </div>
+          <span class="font-bold hidden md:inline-block tracking-tight ">Lady's Fash</span>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3 mb-8">
+        <img src={user.image.publicUrl} class="w-10 h-10 rounded-full object-cover" />
+        <div class="leading-tight text-xs lg:text-sm">
+          <p class="font-bold  text-gray-900">{user.firstname} {user.lastname}</p>
+          <p class="text-xs text-gray-500">Member</p>
+        </div>
+      </div>
+
+      <nav class="flex flex-col space-y-2 flex-1">
+        <a href="/dashboard" class="flex items-center gap-3 p-3 text-sm lg:text-md rounded-xl font-semibold text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors group">
+          <Icon name="lucide:file-text" class="w-5 h-5 text-gray-400 group-hover:text-pink-500" />
+          My Posts
+        </a>
+        <a href="/dashboard/settings" class="flex items-center gap-3 p-3 text-sm lg:text-md rounded-xl font-semibold text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors group">
+          <Icon name="lucide:settings" class="w-5 h-5 text-gray-400 group-hover:text-pink-500" />
+          Settings
+        </a>
+      </nav>
+      <div class="flex-grow"></div>
+
+      <div class="mt-auto pt-6 border-t border-gray-100">
+        <a href="/api/logout" class="flex items-center gap-3 p-3 text-sm lg:text-md rounded-xl font-semibold text-red-500 hover:bg-red-50 transition-colors group">
+          <Icon name="lucide:log-out" class="w-5 h-5 group-hover:rotate-12 transition-transform" />
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <main class="flex-1 bg-gray-50 p-4">
+        <Icon name="lucide:sidebar" id="sidebar-icon" />
+       <slot />
+    </main>
+
+  </div> 
+
+  <script>
+    const sidebarIcon = document.getElementById('sidebar-icon');
+    const sidebarContent = document.getElementById('sidebar-content');
+
+    // @ts-ignore
+    sidebarIcon.addEventListener('click', () => {
+        // @ts-ignore
+      sidebarContent.classList.toggle('hidden');
+    });
+    </script>
+</body>
+</html>

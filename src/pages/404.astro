@@ -1,9 +1,29 @@
-<div>
-    <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-        Example Link
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10v11a1 1 0 001 1h11a1 1 0 001-1v-5" />
-        </svg>
-    </a>
-</div>
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="404 - Page Not Found">
+  <main class="relative isolate min-h-screen overflow-hidden bg-white">
+    <div class="absolute inset-0 -z-10 h-full w-full bg-white "></div>
+    
+    <div class="mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8">
+      <p class="text-base font-semibold leading-8 text-indigo-600">404</p>
+      <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Page not found</h1>
+      <p class="mt-6 text-base leading-7 text-gray-600">
+        Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.
+      </p>
+      
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a
+          href="/"
+          class="rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+        >
+          Go back home
+        </a>
+        
+      </div>
+
+      
+    </div>
+  </main>
+</DefaultLayout>

@@ -1,6 +1,39 @@
 ---
+export const prerender = false;
+
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import Logo from '../assets/images/logo.png';
+
+const message = Astro.url.searchParams.get('message') || "";
+
+if (Astro.request.method === "POST") {
+  const formData = await Astro.request.formData();
+  try {
+    const apiResponse = await fetch(`${Astro.url.origin}/api/login`, {
+      method: "POST",
+      body: formData,
+    });
+    const apiResult = await apiResponse.json();
+    if (apiResponse.status.toString().startsWith("4")) {
+      const error = apiResult.error || "Login failed. Please try again.";
+      return Astro.redirect(`/login?message=${encodeURIComponent(error)}`);
+    }
+    
+    if (apiResult.session) {
+      const { access_token, refresh_token } = apiResult.session;
+
+      Astro.cookies.set("sb-access-token", access_token, { path: "/", httpOnly: true, secure: true });
+      Astro.cookies.set("sb-refresh-token", refresh_token, { path: "/", httpOnly: true, secure: true });
+      
+      return Astro.redirect("/dashboard");
+    }
+    const err = "An unexpected error occurred. Please try again.";
+    return Astro.redirect(`/login?message=${encodeURIComponent(err)}`);
+  } catch (err) {    
+    const error = "An unexpected error occurred. Please try again.";
+    return Astro.redirect(`/login?message=${encodeURIComponent(error)}`);
+  }
+}
 ---
 
 <DefaultLayout>
@@ -11,10 +44,15 @@ import Logo from '../assets/images/logo.png';
         </div>
 <h2 class="text-2xl font-bold mb-4 text-black text-center">Welcome Back!</h2>
 <p class="text-center">Log in to your account.</p>
-<form action="/login" method="POST" class="space-y-4 w-full max-w-sm">
+<form method="POST" class="space-y-4 w-full max-w-sm">
+  {message && (
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <span class="block sm:inline">{message}</span>
+    </div>
+  )}
   <div>
-    <label for="username" class="block text-sm font-medium text-black">Username</label>
-    <input type="text" id="username" name="username" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500">
+    <label for="email" class="block text-sm font-medium text-black">Email</label>
+    <input type="text" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500">
   </div>
   <div>
     <label for="password" class="block text-sm font-medium text-black">Password</label>
